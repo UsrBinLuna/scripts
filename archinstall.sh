@@ -1,8 +1,8 @@
 #timedatectl set-ntp true
 
 echo "the disk must have 3 partitions (1- uefi (/boot/efi); 2- swap; 3- root(/)), they should **not** be mounted"
-read -p "continue? [Y/n] " ynyn
-if [[ $ynyn = "n" || $ynyn = "N" ]]; then
+read -p "continue? [Y/n] " cnt
+if [[ $cnt = "n" || $cnt = "N" ]]; then
   exit 1
 fi
 read -p "disk (ex: /dev/sda): " dsk
