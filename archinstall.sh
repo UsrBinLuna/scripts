@@ -1,6 +1,6 @@
 #timedatectl set-ntp true
 
-echo "the disk must have 3 partitions (1- uefi (/boot/efi); 2- swap; 3- root(/)"
+echo "the disk must have 3 partitions (1- uefi (/boot/efi); 2- swap; 3- root(/)), they should **not** be mounted"
 read -r "continue? [Y/n] " ynyn
 if [[ $ynyn = "n" || $ynyn = "N" ]]; then
   exit 1
@@ -21,7 +21,7 @@ filesystems(){
   mkfs.ext4 "$dsk3"
   mount "$dsk3" /mnt -v
   mkdir /mnt/boot/efi -v -p
-  mount "$dsk1" /mnt -v
+  mount "$dsk1" /mnt/boot/efi -v
   swapon "$dsk2"
 }
 
