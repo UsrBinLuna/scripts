@@ -32,9 +32,9 @@ install(){
   genfstab -U /mnt >> /mnt/etc/fstab
 }
 
-time(){
+settime(){
   echo "setting timezone to $TZ"
-  ln -s /usr/share/zoneinfo/$TZ /mnt/etc/localtime
+  ln -s /mnt/usr/share/zoneinfo/$TZ /mnt/etc/localtime
   arch-chroot /mnt hwclock --systohc
 }
 
@@ -81,7 +81,7 @@ rebootpc(){
 main(){
   filesystem
   install
-  time
+  settime
   locale
   network
   pass
