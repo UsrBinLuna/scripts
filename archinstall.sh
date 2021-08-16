@@ -79,7 +79,7 @@ rebootpc(){
 }
 
 main(){
-  filesystem
+  filesystems
   install
   settime
   locale
