@@ -90,3 +90,5 @@ main(){
   sudoperms
   rebootpc
 }
+
+main
