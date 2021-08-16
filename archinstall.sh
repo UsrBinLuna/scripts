@@ -1,19 +1,19 @@
 #timedatectl set-ntp true
 
 echo "the disk must have 3 partitions (1- uefi (/boot/efi); 2- swap; 3- root(/)), they should **not** be mounted"
-read -r "continue? [Y/n] " ynyn
+read -p "continue? [Y/n] " ynyn
 if [[ $ynyn = "n" || $ynyn = "N" ]]; then
   exit 1
 fi
-read -r -p "disk (ex: /dev/sda): " dsk
-read -r -p "extra packages (separated by spaces): " pkg
-read -r -p "timezone (ex. America/Santiago): " TZ
-read -r -p "locale (ex. en_US.UTF-8): " LOCALE
-read -r -p "enter keyboard layour (ex. la-latin1): " kbd
-read -r -p "enter hostname: " HOSTNAME
-read -r -p "root password: " PSD
-read -r -p "enter username: " USERNAME
-read -r -p "enter user password: " UPWD
+read -p "disk (ex: /dev/sda): " dsk
+read -p "extra packages (separated by spaces): " pkg
+read -p "timezone (ex. America/Santiago): " TZ
+read -p "locale (ex. en_US.UTF-8): " LOCALE
+read -p "enter keyboard layour (ex. la-latin1): " kbd
+read -p "enter hostname: " HOSTNAME
+read -p "root password: " PSD
+read -p "enter username: " USERNAME
+read -p "enter user password: " UPWD
 
 filesystems(){
   mkfs.vfat -F 32 "$dsk1"
